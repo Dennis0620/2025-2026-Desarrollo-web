@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Restaurante de Dennis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Restaurante de Dennis</h1> <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="https://www.google.com/maps" target="_blank">Ver Ubicación en Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio">
+            <h2>Bienvenido al Sabor de Nueva Loja</h2> <p>Nuestro sistema ofrece la comida más <strong>rápida</strong> y deliciosa de la región. 
+            <em>Calidad garantizada</em> en cada plato.</p>
+
+            <h3>Conoce nuestra cocina</h3> <p>Video de preparación:</p>
+            <video controls width="380" height="">
+                <source src="assets/Encebollado.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+        </section>
+
+        <article id="plato-destacado">
+            <h3>Plato del Día: Encebollado Especial</h3>
+            
+            <img src="assets/Encebollado-ecuatoriano-de-pescado.webp" alt="Foto de un Encebollado con chifles" width="300">
+            
+            <p>Ingredientes principales:</p>
+            <ol>
+                <li>Pescado Albacora fresco</li>
+                <li>Yuca seleccionada</li>
+                <li>Cebolla paiteña encurtida</li>
+            </ol>
+        </article>
+
+        <section id="menu">
+            <h2>Tabla de Precios</h2>
+            
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Plato</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr> <td>Encebollado</td>
+                        <td>Sopas</td>
+                        <td>$3.50</td>
+                    </tr>
+                    <tr> <td>Guatita</td>
+                        <td>Segundos</td>
+                        <td>$4.00</td>
+                    </tr>
+                    <tr> <td>Jugo Natural</td>
+                        <td>Bebidas</td>
+                        <td>$1.50</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contacto">
+            <h2>Regístrate</h2>
+            
+            <form action="#" method="POST">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                
+                <label for="email">Correo:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                
+                <button type="submit">Enviar Datos</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dennis Dev - Proyecto Restaurante Backend</p>
+    </footer>
+
+</body>
+</html>

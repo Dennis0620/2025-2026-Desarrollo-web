@@ -1,0 +1,118 @@
+/* 1. ESTILOS GENERALES Y COLORES PERSONALIZADOS */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    background-color: #f4f4f9; /* Fondo gris muy suave */
+    color: #333; /* Texto gris oscuro (mejor que negro puro) */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* 2. ESTILOS A ENCABEZADOS Y PÁRRAFOS */
+h1, h2, h3 {
+    color: #3a4a5e; /* Azul oscuro corporativo */
+    border-bottom: 2px solid #e74c3c; /* Línea roja debajo del título (Toque de diseño) */
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Estilo para el Header y Navegación */
+header {
+    background-color: #4985c2;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+    border-radius: 109px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: rgb(255, 255, 255); /* Sobreescribimos el color para el header */
+    border: none;
+}
+
+nav ul {
+    list-style-type: none; /* Quita los puntos de la lista */
+    padding: 0;
+}
+
+nav ul li {
+    display: inline; /* Pone el menú horizontal */
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #e74c3c; /* Cambia a rojo cuando pasas el mouse */
+}
+
+/* 3. BORDES Y ESTILOS A LA TABLA */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Quita espacios entre celdas */
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Borde gris suave */
+    text-align: left;
+}
+
+th {
+    background-color: #e74c3c; /* Cabecera Roja */
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Filas rayadas (cebra) */
+}
+
+/* 4. BORDES Y ESTILOS AL FORMULARIO */
+form {
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #2c3e50; /* Borde azul grueso */
+    border-radius: 8px;
+    max-width: 400px; /* Que no sea gigante */
+}
+
+input[type="text"], input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #27ae60; /* Botón Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #219150; /* Verde más oscuro al pasar mouse */
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
