@@ -1,0 +1,41 @@
+.btn-primary {
+    background-color: #ff5733; 
+    border-color: #ff5733; 
+    border-radius: 12px; 
+    transition: all 0.3s ease-in-out; 
+}
+.btn-primary:hover {
+    transform: scale(1.05); 
+    background-color: #e04e2d; 
+    border-color: #e04e2d; 
+    box-shadow: 0 8px 15px rgba(255, 87, 51, 0.4); 
+}
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Necesitas la transición para que el cambio de sombra sea suave */
+    transition: box-shadow 0.3s ease-in-out; 
+}
+.card:hover {
+    /* La sombra se hace más grande y oscura */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); 
+    /* Puedes añadir un pequeño levantamiento si quieres: transform: translateY(-5px); */
+}
+@media (max-width: 768px) {
+    
+    /* Regla A: Cambiamos el color de fondo del Navbar de negro a gris claro */
+    .navbar {
+        background-color: #f8f9fa !important; /* El !important fuerza el override */
+    }
+
+    /* Regla B: Hacemos que el texto en el footer sea más pequeño */
+    .footer .text-muted {
+        font-size: 0.8rem;
+    }
+    
+    /* Regla C: Cambiamos el color de todos los títulos principales (h1) a verde */
+    h1 {
+        color: rgb(0, 119, 128);
+    }
+
+}
