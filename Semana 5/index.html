@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Wallpapers | Dennis v2.0</title>
+    <!-- Vinculamos la hoja de estilos -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Galería Interactiva</h1>
+        <p>Explorando el DOM con JavaScript</p>
+    </header>
+
+    <main class="gallery-container">
+        
+        <!-- SECCIÓN 1: El Visor Principal (Donde se ve la imagen grande) -->
+        <!-- Le ponemos IDs únicos porque JS va a modificar estos elementos -->
+        <section class="main-view">
+            <div class="image-wrapper">
+                <img id="current-image" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1000&auto=format&fit=crop" alt="Imagen Principal">
+            </div>
+            <h3 id="image-title">Paisaje Natural</h3>
+            <p id="image-description">Una vista impresionante de la naturaleza.</p>
+        </section>
+
+        <!-- SECCIÓN 2: La Tira de Miniaturas (Thumbnails) -->
+        <!-- JS escuchará los clicks en estas imágenes -->
+        <section class="thumbnails-list">
+            
+            <!-- Miniatura 1 -->
+            <!-- data-title y data-desc son atributos personalizados para guardar info extra -->
+            <img class="thumb active" 
+                 src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=200&auto=format&fit=crop" 
+                 alt="Paisaje Natural"
+                 data-title="Paisaje Natural"
+                 data-description="Una vista impresionante de la naturaleza."
+                 onclick="changeImage(this)">
+
+            <!-- Miniatura 2 -->
+            <img class="thumb" 
+                 src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=200&auto=format&fit=crop" 
+                 alt="Bosque Misterioso"
+                 data-title="Bosque Misterioso"
+                 data-description="Árboles altos y neblina en el bosque."
+                 onclick="changeImage(this)">
+
+            <!-- Miniatura 3 -->
+            <img class="thumb" 
+                 src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=200&auto=format&fit=crop" 
+                 alt="Montañas Nevadas"
+                 data-title="Montañas Nevadas"
+                 data-description="El frío invierno en las cumbres altas."
+                 onclick="changeImage(this)">
+
+            <!-- Miniatura 4 -->
+            <img class="thumb" 
+                 src="https://images.unsplash.com/photo-1501854140884-074cf2b2c3af?q=80&w=200&auto=format&fit=crop" 
+                 alt="Playa al Atardecer"
+                 data-title="Playa al Atardecer"
+                 data-description="Relajante vista del mar."
+                 onclick="changeImage(this)">
+                 
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Desarrollado por Dennis - Semana 5</p>
+    </footer>
+
+    <!-- Vinculamos el script al final del body para asegurar que el HTML cargue primero -->
+    <script src="script.js"></script>
+</body>
+</html>
