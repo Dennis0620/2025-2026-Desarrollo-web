@@ -5,86 +5,169 @@
     padding: 0;
 }
 
-/* 2. Cuerpo: Fondo oscuro y texto claro */
 body {
-    font-family: system-ui, -apple-system, sans-serif;
-    background-color: #1a1a1a; /* Gris muy oscuro */
-    color: #f0f0f0;            /* Blanco hueso */
-    text-align: center;        /* Centramos todo */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212; 
+    color: #e0e0e0;            
+    text-align: center;
     padding: 20px;
+    min-height: 100vh;
 }
 
 header {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
-/* 3. Contenedor Principal: Centrado y con ancho máximo */
-.gallery-container {
-    max-width: 800px; /* No se estira más de 800px */
-    margin: 0 auto;   /* Centrado automático */
-    background-color: #2a2a2a;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5); /* Sombra suave */
-}
-
-/* 4. Visor Principal (Imagen Grande) */
-.image-wrapper {
-    width: 100%;
-    height: 450px; /* Altura fija para que no salte el diseño */
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-#current-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Recorta la imagen para llenar el espacio sin deformar */
-    transition: opacity 0.3s ease; /* Suavidad al cambiar */
-}
-
-/* Estilos del texto de la imagen */
-#image-title {
-    color: #4da6ff; /* Azulito */
+h1 {
+    color: #fff;
     margin-bottom: 5px;
 }
 
-#image-description {
+p {
+    color: #aaa;
     font-size: 0.9rem;
-    color: #ccc;
+}
+
+/* 2. Panel de Control (Inputs y Botones) */
+.controls {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Para que baje en celulares */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="url"] {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background-color: #2d2d2d;
+    color: white;
+    width: 60%; /* Ocupa la mayoría del espacio */
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="url"]:focus {
+    border-color: #4da6ff;
+}
+
+/* Botones Generales */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Botón Agregar (Verde) */
+.btn-add {
+    background-color: #2ea043;
+    color: white;
+}
+
+.btn-add:hover {
+    background-color: #3fb950;
+    transform: translateY(-1px);
+}
+
+.btn-add:active {
+    transform: translateY(1px);
+}
+
+/* Botón Eliminar (Rojo) */
+.btn-delete {
+    background-color: #da3633;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #f85149;
+}
+
+/* 3. Contenedor de la Galería */
+.gallery-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+/* 4. Visor Principal */
+.main-view {
     margin-bottom: 20px;
 }
 
-/* 5. Tira de Miniaturas (Thumbnails) */
-.thumbnails-list {
-    display: flex;       /* Ponemos las imágenes en fila */
+.image-wrapper {
+    width: 100%;
+    height: 450px;
+    background-color: #000; /* Fondo negro por si la imagen no carga */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;           /* Espacio entre fotos */
-    flex-wrap: wrap;     /* Si no caben, bajan a la siguiente línea */
+}
+
+#current-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Muestra toda la imagen sin recortar */
+    transition: opacity 0.3s ease;
+}
+
+#image-status {
+    color: #4da6ff;
+    font-size: 1.1rem;
+    font-weight: normal;
+}
+
+/* 5. Lista de Miniaturas */
+.thumbnails-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding-top: 15px;
+    border-top: 1px solid #333;
+    min-height: 80px; /* Para que no colapse si está vacío */
 }
 
 .thumb {
     width: 100px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;     /* Manito al pasar el mouse */
-    opacity: 0.5;        /* Opacas por defecto */
+    height: 70px;
+    object-fit: cover; /* Aquí sí recortamos para que sean uniformes */
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.6;
     transition: all 0.2s ease;
     border: 2px solid transparent;
 }
 
-/* 6. Interacción: Cuando pasas el mouse o está seleccionada */
 .thumb:hover {
-    opacity: 0.8;
-    transform: scale(1.05); /* Se agranda un poquito */
+    opacity: 0.9;
+    transform: scale(1.05);
 }
 
+/* Clase Active (El Requisito Clave) */
 .thumb.active {
     opacity: 1;
-    border-color: #4da6ff; /* Borde azul para la seleccionada */
-    transform: scale(1.05);
+    border-color: #4da6ff; /* Borde azul brillante */
+    box-shadow: 0 0 8px rgba(77, 166, 255, 0.6); /* Resplandor */
+    transform: scale(1.1);
+    z-index: 1; /* Para que quede encima de las otras */
 }
 
 /* Pie de página */
@@ -92,4 +175,20 @@ footer {
     margin-top: 40px;
     font-size: 0.8rem;
     color: #666;
+}
+
+/* Responsive para celular */
+@media (max-width: 600px) {
+    input[type="url"] {
+        width: 100%; /* Input ocupa todo el ancho en móvil */
+    }
+    
+    .image-wrapper {
+        height: 300px; /* Visor más pequeño en móvil */
+    }
+    
+    .thumb {
+        width: 70px;
+        height: 50px;
+    }
 }
